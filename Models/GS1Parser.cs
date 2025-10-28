@@ -10,7 +10,7 @@ namespace MOS.Models
     {
         #region Fields
         private string m_testInput = "010415003419461217250630102139485";
-        private string? m_input;
+        private string m_input;
         #endregion
 
 

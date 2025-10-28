@@ -66,14 +66,13 @@ namespace MOS.PageModels
         }
         #endregion 
 
-
         #region Public Methods
         public void OnButtonClick_AddProduct()
         {
+            LastProductEntry = null;
             m_productManager.AddProduct(out m_lastProductEntry);
         }
         #endregion
-
 
         #region Private & Protected Methods
         protected void OnPropertyChanged([CallerMemberName] string? name = null)

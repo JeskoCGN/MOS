@@ -34,11 +34,11 @@
 
 
         <Label x:Name="GTIN_Label" Grid.Row="0" Grid.Column="0" Text="Global Trade Item Number"></Label>
-        <Label x:Name="GTIN_Output" Grid.Row="1" Grid.Column="0" Text="{Binding GS1Asset.GTIN}"></Label>
+        <Label x:Name="GTIN_Output" Grid.Row="1" Grid.Column="0" Text="{Binding GS1Asset.GTIN}" TextColor="Black"></Label>
         <Label x:Name="ExpDate_Label" Grid.Row="2" Grid.Column="0" Text="Expiration Date"></Label>
-        <Label x:Name="ExpDate_Output" Grid.Row="3" Grid.Column="0" Text="{Binding GS1Asset.ExpDate}"></Label>
+        <Label x:Name="ExpDate_Output" Grid.Row="3" Grid.Column="0" Text="{Binding GS1Asset.ExpDate}" TextColor="Black"></Label>
         <Label x:Name="LOT_Label" Grid.Row="4" Grid.Column="0" Text="LOT"></Label>
-        <Label x:Name="LOT_Output" Grid.Row="5" Grid.Column="0" Text="{Binding GS1Asset.LOT}"></Label>
+        <Label x:Name="LOT_Output" Grid.Row="5" Grid.Column="0" Text="{Binding GS1Asset.LOT}" TextColor="Black"></Label>
 
         <Button Grid.Row="7" Grid.Column="0" Text="Add" Command="{Binding ButtonClick_TestButton}"></Button>
     </Grid>
