@@ -3,26 +3,18 @@ using System.Diagnostics;
 
 namespace MOS.Models
 {
-    class ProductManager : INotifyPropertyChanged
+    class ProductManager
     {
         #region Fields
         private GS1Parser m_gs1Parser;
         private List<Product> m_products = new();
         #endregion
 
-        #region Events
-        public event PropertyChangedEventHandler? PropertyChanged;
-        #endregion
-
         #region Properties
         public List<Product> Products
         {
             get => m_products;
-            set
-            {
-                m_products = value;
-                PropertyChanged?.Invoke("ScannedProducts", new PropertyChangedEventArgs("ScannedProducts"));
-            }
+            set => m_products = value;
         }
         #endregion
 
@@ -39,7 +31,7 @@ namespace MOS.Models
         /// <summary>
         /// Adds Product to List as type Product and returns adding success
         /// </summary>
-        public bool AddProduct()
+        public bool AddProduct(out GS1_DataAsset _dataAsset)
         {
             try
             {
@@ -47,11 +39,13 @@ namespace MOS.Models
                 var gs1_data = m_gs1Parser.ParseInputToGS1(reader.TryReadQR());
                 Product productToAdd = new Product(gs1_data.GTIN, gs1_data.ExpDate, gs1_data.LOT);
                 m_products.Add(productToAdd);
+                _dataAsset = gs1_data;
                 return true;
             }
             catch (Exception _ex)
             {
                 Debug.WriteLine(_ex);
+                _dataAsset = null;
                 return false;
             }
         }

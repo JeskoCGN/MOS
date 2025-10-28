@@ -3,7 +3,7 @@
     /// <summary>
     /// This Class represents the informations coming from GS1 QR Codes aggregated into a class object.
     /// </summary>
-    class GS1_DataAsset
+    public class GS1_DataAsset
     {
         #region Fields
         private string m_gtin;

@@ -1,6 +1,7 @@
 using MOS.Models;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 namespace MOS.PageModels
 {
@@ -9,10 +10,12 @@ namespace MOS.PageModels
         #region Fields
         private ProductManager m_productManager;
         private string m_log;
+        private GS1_DataAsset m_lastProductEntry;
         #endregion
 
         #region Events
         public event PropertyChangedEventHandler? PropertyChanged;
+        public event Action<string, string, string>? OnProductEntryReceived;
         #endregion
 
         #region Properties
@@ -26,7 +29,20 @@ namespace MOS.PageModels
             set
             {
                 m_log = value;
-                PropertyChanged?.Invoke("Log", new PropertyChangedEventArgs(m_log));
+                OnPropertyChanged();
+            }
+        }
+
+        public GS1_DataAsset LastProductEntry
+        {
+            get => m_lastProductEntry;
+            set
+            {
+                if (m_lastProductEntry != value)
+                {
+                    OnPropertyChanged();
+                    m_lastProductEntry = value;
+                }
             }
         }
         #endregion
@@ -51,11 +67,17 @@ namespace MOS.PageModels
         #endregion 
 
 
-        #region Private Methods
+        #region Public Methods
         public void OnButtonClick_AddProduct()
         {
-            m_productManager.AddProduct();
+            m_productManager.AddProduct(out m_lastProductEntry);
         }
+        #endregion
+
+
+        #region Private & Protected Methods
+        protected void OnPropertyChanged([CallerMemberName] string? name = null)
+            => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         #endregion
     }
 }

@@ -6,7 +6,6 @@
              xmlns:controls="clr-namespace:MOS.Pages.Controls"
              xmlns:pullToRefresh="clr-namespace:Syncfusion.Maui.Toolkit.PullToRefresh;assembly=Syncfusion.Maui.Toolkit"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             xmlns:scanner="clr-namespace:BarcodeScanning;assembly=BarcodeScanning.Native.Maui"
              x:Class="MOS.Pages.MainPage"
              x:DataType="pageModels:MainPageModel"
              x:Name="OverviewPage">
@@ -19,7 +18,7 @@
     
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="300"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
 
@@ -27,12 +26,21 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
 
-        <Label x:Name="Log" Grid.Row="0" Grid.Column="0" Text="{Binding Log}"></Label>
+        <Label x:Name="GTIN_Label" Grid.Row="0" Grid.Column="0" Text="Global Trade Item Number"></Label>
+        <Label x:Name="GTIN_Output" Grid.Row="1" Grid.Column="0" Text="{Binding GS1Asset.GTIN}"></Label>
+        <Label x:Name="ExpDate_Label" Grid.Row="2" Grid.Column="0" Text="Expiration Date"></Label>
+        <Label x:Name="ExpDate_Output" Grid.Row="3" Grid.Column="0" Text="{Binding GS1Asset.ExpDate}"></Label>
+        <Label x:Name="LOT_Label" Grid.Row="4" Grid.Column="0" Text="LOT"></Label>
+        <Label x:Name="LOT_Output" Grid.Row="5" Grid.Column="0" Text="{Binding GS1Asset.LOT}"></Label>
 
-        <Button Grid.Row="1" Grid.Column="0" Text="Add" Command="{Binding ButtonClick_TestButton}"></Button>
+        <Button Grid.Row="7" Grid.Column="0" Text="Add" Command="{Binding ButtonClick_TestButton}"></Button>
     </Grid>
 
     

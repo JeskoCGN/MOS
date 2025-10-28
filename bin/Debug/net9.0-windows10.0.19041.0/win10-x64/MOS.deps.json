@@ -9,7 +9,6 @@
     ".NETCoreApp,Version=v9.0/win10-x64": {
       "MOS/1.0": {
         "dependencies": {
-          "BarcodeScanning.Native.Maui": "2.2.1",
           "CommunityToolkit.Maui": "11.1.1",
           "CommunityToolkit.Mvvm": "8.3.2",
           "Microsoft.Data.Sqlite.Core": "8.0.8",
@@ -33,17 +32,6 @@
           "WinRT.Runtime.dll": {
             "assemblyVersion": "2.2.0.0",
             "fileVersion": "2.2.0.48161"
-          }
-        }
-      },
-      "BarcodeScanning.Native.Maui/2.2.1": {
-        "dependencies": {
-          "Microsoft.Maui.Controls": "9.0.111"
-        },
-        "runtime": {
-          "lib/net9.0/BarcodeScanning.Native.Maui.dll": {
-            "assemblyVersion": "2.2.1.0",
-            "fileVersion": "2.2.1.0"
           }
         }
       },
@@ -625,13 +613,6 @@
       "type": "runtimepack",
       "serviceable": false,
       "sha512": ""
-    },
-    "BarcodeScanning.Native.Maui/2.2.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-yH7Blq2nbOo5oTqKWA5gr6K4z6w1dDb2yCOaJ2Nolu/EkVS2SKTTBUzdAfLmk3ZHcOGGjrpv/WzEetkFFXsaog==",
-      "path": "barcodescanning.native.maui/2.2.1",
-      "hashPath": "barcodescanning.native.maui.2.2.1.nupkg.sha512"
     },
     "CommunityToolkit.Maui/11.1.1": {
       "type": "package",
