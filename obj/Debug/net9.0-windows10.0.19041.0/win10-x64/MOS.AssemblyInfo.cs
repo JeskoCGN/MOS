@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MOS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+510c918c7e01b4e4645af874a53f40cecedc9896")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+2d4065e3384736531f554969a166eeec546b0e0b")]
 [assembly: System.Reflection.AssemblyProductAttribute("MOS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MOS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

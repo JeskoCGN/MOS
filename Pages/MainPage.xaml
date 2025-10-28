@@ -10,13 +10,13 @@
              x:Class="MOS.Pages.MainPage"
              x:DataType="pageModels:MainPageModel"
              x:Name="OverviewPage">
-	<ContentPage.BindingContext>
-		<pageModels:MainPageModel/>
-	</ContentPage.BindingContext>
+    
+    <ContentPage.BindingContext>
+        <pageModels:MainPageModel/>
+    </ContentPage.BindingContext>
 
-
-
-
+    
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100"/>
@@ -29,54 +29,11 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Label x:Name="Testtext" Grid.Row="0" Grid.Column="0" TextColor="Green" FontSize ="Default">
-			
-        </Label>
 
-        <CollectionView>
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Grid>
-                            
-                        </Grid>
-                    </ViewCell>
-                    
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+        <Label x:Name="Log" Grid.Row="0" Grid.Column="0" Text="{Binding Log}"></Label>
 
-        <Button Grid.Row="1" Grid.Column="0" Text="Empty"></Button>
+        <Button Grid.Row="1" Grid.Column="0" Text="Add" Command="{Binding ButtonClick_TestButton}"></Button>
     </Grid>
 
-    <!--<Grid ColumnDefinitions="2">
-        <CollectionView BackgroundColor="AliceBlue" ItemsSource="{Binding ProductList}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Grid Padding="10">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
-                        
-                        <Label Grid.Column="1"
-                               Text="{Binding }"
-                               FontAttributes="Bold"/>
-                        
-                        <Label Grid.Row="1"
-                               Grid.Column="1"
-                               Text="{Binding }"
-                               FontAttributes="Italic"
-                               VerticalOptions="End" />
-                        
-                        
-                    </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-    </Grid>-->
+    
 </ContentPage>

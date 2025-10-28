@@ -1,40 +1,35 @@
 ﻿namespace MOS.Models
 {
+    /// <summary>
+    /// This class shall represent a product, kitted with all necessary informations by GS1 Standards, open for further extension
+    /// </summary>
     public class Product
     {
         #region Fields
-        private string m_name;
         private string m_gtin;
-        private string m_expirationDate;
-        private string m_serialNumber;
+        private DateTime m_expirationDate;
+        private string m_lot;
         private bool m_isFavorite;
         private DateTime m_scanDate;
         #endregion
 
-
         #region Properties
-        public string Name
-        {
-            get => m_name;
-            set => m_name = value;
-        }
-
         public string GTIN
         {
             get => m_gtin;
             set => m_gtin = value;
         }
 
-        public string ExpirationDate
+        public DateTime ExpirationDate
         {
             get => m_expirationDate;
             set => m_expirationDate = value;
         }
 
-        public string SerialNumber
+        public string LOT
         {
-            get => m_serialNumber;
-            set => m_serialNumber = value;
+            get => m_lot; 
+            set => m_lot = value;
         }
 
         public bool IsFavorite
@@ -53,19 +48,24 @@
         #region Constructors
         public Product()
         {
-            m_name = string.Empty;
             m_gtin = string.Empty;
-            m_expirationDate = string.Empty;
-            m_serialNumber = string.Empty;
-            m_scanDate = DateTime.MinValue;
+            m_expirationDate = DateTime.MinValue;
+            m_lot = string.Empty;
+            m_scanDate = DateTime.Today;
         }
 
-        public Product(string _name, string _gtin, string _expirationDate, string _serialNumber)
+        /// <summary>
+        /// Allows to construct a product object instance with dependency injection of necessary GS1 Data
+        /// </summary>
+        /// <param name="_gtin"></param>
+        /// <param name="_expirationDate"></param>
+        /// <param name="_lot"></param>
+        public Product(string _gtin, DateTime _expirationDate, string _lot)
         {
-            m_name = _name;
             m_gtin = _gtin;
-            m_expirationDate = _expirationDate;
-            m_serialNumber = _serialNumber;
+            m_expirationDate = DateTime.MinValue;
+            m_lot = _lot;
+            m_scanDate = DateTime.Today;
         }
 
         #endregion 
